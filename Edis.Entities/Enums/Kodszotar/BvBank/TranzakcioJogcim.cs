@@ -1,0 +1,191 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Edis.Entities.Enums.Kodszotar
+{
+    public static partial class KodszotarEnums
+    {
+        public enum TranzakcioJogcim
+        {
+            Egyebjutalom = 10315,
+            Befogadaskoribefizetesfogvatartottreszere = 10316,
+            Talaltpenzfogvatartottreszere = 10317,
+            ValutaValtasFogvatartottReszere = 10318,
+            ValutavaltasCelzottPenzkent = 10539,
+            Osztondij = 10319,
+            Munkadij = 10320,
+            VegszallitasMasIntezetbol = 10321,
+            /// <summary>
+            /// Nyugdíifolyósítótól érkezett volt korábban
+            /// </summary>
+            NemVedett = 10322,
+            KapcsolattartotolErkezettFogvatartottReszere = 10323,
+            BeazonositatlanTetel = 10324,
+            Rabtartasdij = 10325,
+            SzolgaltatoiKifizetes = 10326,
+            EgyebBvTartozas = 10328,
+            Karterites = 10329,
+            Letiltas = 10330,
+            Vasarlas = 10331,
+            Adomany = 10332,
+            KapcsolattartonakUtalas = 10333,
+            KapcsolattartonakCimreKuldes = 10334,
+            TelefonVisszateritesVisszavonas = 10335,
+            EltavraKifizetes = 10337,
+            Szakkor = 10338,
+            UgyintezesiDij = 10339,
+            TakarekbetetkonyviBefizetes = 10340,
+            SzabadulaskorKifizetett = 10341,
+            VegszallitasMasIntezetbe = 10342,
+            Visszautalas = 10343,
+            Kerekites = 10344,
+            Postakoltseg = 10345,
+            LetetiPenzmaradvany = 10346,
+            PenztariBefizetesBanknak = 10347,
+            KpFelvetelKartyarol = 10348,
+            KartyaraUtalasBankbol = 10349,
+            PenzkuldesMasFogvatartottnak = 10352,
+            PenzkuldesMasFogvatartottnakCelzottan = 10476,
+            IntezetekKozottiHitelezesRendezese = 10356,
+            KpFelvetelBankbol = 10362,
+            Kartyadij = 10365,
+            TisztasagiCsomag = 10366,
+            EltavrolVisszahozott = 10367,
+            PenzbuntetesSzabalysertesKifizetese = 10368,
+            Csekkbefizetes = 10369,
+            JavadalomSzamara = 10370,
+            CsaladiPotlek = 10371,
+            VisszautalasCimre = 10372,
+            ElojegyzettBevetel = 10373,
+            ElojegyzettBevetelKivezetese = 10374,
+            MasikIntezetbolErkezettPenz = 10375,
+            GyamsagiSzamlaraUtalas = 10376,
+            TerapiasMunkadij = 10377,
+            TevesLevonasVisszaterites = 10378,
+            TevesenRogzitettTelefonalasVisszateritese = 10379,
+            TevesenKonyvelesRendezese = 10380,
+            CelzottPenzKietkezesre = 10381,
+            CelzottPenzTelefonalasra = 10382,
+            SzamlarolVisszaerkezett = 10383,
+            CimrolVisszaerkezett = 10384,
+            MunkadijhozTartozoRabtartasdij = 10385,
+            VedettPenzkuldemeny = 10386,
+            EgyeniVasarlas = 10387,
+            CsomagkuldesiDij = 10388,
+            VisszakuldottLetiltas = 10389,
+            TelefonVisszaterites = 10429,
+            PenzkuldesKapcsolattartonak = 10465,
+            BefogadaskoriBefizetesCelzottPenzkent = 10470,
+            BefogadaskoriBefizetesPenzbirsagra = 10471,
+            VisszaerkezettPenzkuldemeny = 10472,
+            EltavrolVisszahozottCelzottPenzkent = 10473,
+            TerapiasJutalom = 10474,
+            FogvatartottnakMegiteltKarterites = 10475,
+            CelzottPenz = 10477,
+            PenztariKerekites = 10535,
+            PostakoltsegVisszaterites = 10536,
+            IMKartalanitas = 10537,
+            VegrehajtoiSikerdij = 10538,
+            MnbUgyfelJavaraErkezoFizetesiDij= 1106939,
+            MnbUgyfelJavaraErkezoFizetesiDijAtfutorol = 10540
+        }
+    }
+
+    public static class TranzakcioJogcimCsoportositasok
+    {
+        public static List<int> BeazonositasKapcsolattartotol = new List<int>()
+        {
+            (int)KodszotarEnums.TranzakcioJogcim.KapcsolattartotolErkezettFogvatartottReszere,
+            (int)KodszotarEnums.TranzakcioJogcim.CelzottPenz,
+            (int)KodszotarEnums.TranzakcioJogcim.VisszaerkezettPenzkuldemeny,
+
+        };
+        public static List<int> BeazonositasNemKapcsolattartotol = new List<int>()
+        {
+            (int)KodszotarEnums.TranzakcioJogcim.NemVedett,
+            (int)KodszotarEnums.TranzakcioJogcim.TevesenKonyvelesRendezese,
+            (int)KodszotarEnums.TranzakcioJogcim.VedettPenzkuldemeny,
+        };
+
+        public static List<int> PenzKuldemeny = new List<int>()
+        {
+            //(int)KodszotarEnums.TranzakcioJogcim.Egyebjutalom ,
+            (int)KodszotarEnums.TranzakcioJogcim.Befogadaskoribefizetesfogvatartottreszere ,
+            (int)KodszotarEnums.TranzakcioJogcim.Talaltpenzfogvatartottreszere ,
+            (int)KodszotarEnums.TranzakcioJogcim.ValutaValtasFogvatartottReszere ,
+            (int)KodszotarEnums.TranzakcioJogcim.ValutavaltasCelzottPenzkent ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Osztondij ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Munkadij ,
+            //(int)KodszotarEnums.TranzakcioJogcim.VegszallitasMasIntezetbol ,
+            (int)KodszotarEnums.TranzakcioJogcim.NemVedett ,
+            (int)KodszotarEnums.TranzakcioJogcim.KapcsolattartotolErkezettFogvatartottReszere ,
+            (int)KodszotarEnums.TranzakcioJogcim.BeazonositatlanTetel ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Rabtartasdij ,
+            //(int)KodszotarEnums.TranzakcioJogcim.SzolgaltatoiKifizetes ,
+            //(int)KodszotarEnums.TranzakcioJogcim.EgyebBvTartozas ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Karterites ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Letiltas ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Vasarlas ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Adomany ,
+            //(int)KodszotarEnums.TranzakcioJogcim.KapcsolattartonakUtalas ,
+             //(int)KodszotarEnums.TranzakcioJogcim.KapcsolattartonakCimreKuldes ,
+             //(int)KodszotarEnums.TranzakcioJogcim.TelefonVisszateritesVisszavonas ,
+             //(int)KodszotarEnums.TranzakcioJogcim.EltavraKifizetes ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Szakkor ,
+            //(int)KodszotarEnums.TranzakcioJogcim.UgyintezesiDij ,
+            //(int)KodszotarEnums.TranzakcioJogcim.TakarekbetetkonyviBefizetes ,
+            //(int)KodszotarEnums.TranzakcioJogcim.SzabadulaskorKifizetett ,
+            //(int)KodszotarEnums.TranzakcioJogcim.VegszallitasMasIntezetbe ,
+            //(int)KodszotarEnums.TranzakcioJogcim.Visszautalas ,
+             //(int)KodszotarEnums.TranzakcioJogcim.Kerekites ,
+             //(int)KodszotarEnums.TranzakcioJogcim.Postakoltseg ,
+             //(int)KodszotarEnums.TranzakcioJogcim.LetetiPenzmaradvany ,
+            //(int)KodszotarEnums.TranzakcioJogcim.PenztariBefizetesBanknak ,
+            //(int)KodszotarEnums.TranzakcioJogcim.KpFelvetelKartyarol ,
+            //(int)KodszotarEnums.TranzakcioJogcim.KartyaraUtalasBankbol ,
+            (int)KodszotarEnums.TranzakcioJogcim.PenzkuldesMasFogvatartottnak ,
+            (int)KodszotarEnums.TranzakcioJogcim.PenzkuldesMasFogvatartottnakCelzottan ,
+            //(int)KodszotarEnums.TranzakcioJogcim.SzolgaltatoiHitelezesRendezese ,
+             //(int)KodszotarEnums.TranzakcioJogcim.KpFelvetelBankbol ,
+             //(int)KodszotarEnums.TranzakcioJogcim.Kartyadij ,
+             //(int)KodszotarEnums.TranzakcioJogcim.TisztasagiCsomag ,
+             //(int)KodszotarEnums.TranzakcioJogcim.EltavrolVisszahozott ,
+             //(int)KodszotarEnums.TranzakcioJogcim.PenzbuntetesSzabalysertesKifizetese ,
+             //(int)KodszotarEnums.TranzakcioJogcim.Csekkbefizetes ,
+            //(int)KodszotarEnums.TranzakcioJogcim.JavadalomSzamara ,
+            //(int)KodszotarEnums.TranzakcioJogcim.VisszautalasCimre ,
+            //(int)KodszotarEnums.TranzakcioJogcim.ElojegyzettBevetel ,
+            //(int)KodszotarEnums.TranzakcioJogcim.ElojegyzettBevetelKivezetese ,
+            //(int)KodszotarEnums.TranzakcioJogcim.MasikIntezetbolErkezettPenz ,
+            //(int)KodszotarEnums.TranzakcioJogcim.GyamsagiSzamlaraUtalas ,
+            // (int)KodszotarEnums.TranzakcioJogcim.TerapiasMunkadij ,
+             //(int)KodszotarEnums.TranzakcioJogcim.TevesLevonasVisszaterites ,
+             //(int)KodszotarEnums.TranzakcioJogcim.TevesenRogzitettTelefonalasVisszateritese ,
+            //(int)KodszotarEnums.TranzakcioJogcim.TevesenKonyvelesRendezese ,
+            (int)KodszotarEnums.TranzakcioJogcim.CelzottPenzKietkezesre,
+            (int)KodszotarEnums.TranzakcioJogcim.CelzottPenzTelefonalasra ,
+            //(int)KodszotarEnums.TranzakcioJogcim.SzamlarolVisszaerkezett ,
+            //(int)KodszotarEnums.TranzakcioJogcim.CimrolVisszaerkezett ,
+            //(int)KodszotarEnums.TranzakcioJogcim.MunkadijhozTartozoRabtartasdij ,
+             (int)KodszotarEnums.TranzakcioJogcim.VedettPenzkuldemeny ,
+             //(int)KodszotarEnums.TranzakcioJogcim.EgyeniVasarlas ,
+             //(int)KodszotarEnums.TranzakcioJogcim.CsomagkuldesiDij ,
+            //(int)KodszotarEnums.TranzakcioJogcim.VisszakuldottLetiltas,
+            //(int)KodszotarEnums.TranzakcioJogcim.TelefonVisszaterites ,
+            //(int)KodszotarEnums.TranzakcioJogcim.PenzkuldesKapcsolattartonak ,
+             //(int)KodszotarEnums.TranzakcioJogcim.BefogadaskoriBefizetesCelzottPenzkent ,
+             //(int)KodszotarEnums.TranzakcioJogcim.BefogadaskoriBefizetesPenzbirsagra ,
+             //(int)KodszotarEnums.TranzakcioJogcim.VisszaerkezettPenzkuldemeny ,
+            //(int)KodszotarEnums.TranzakcioJogcim.EltavrolVisszahozottCelzottPenzkent ,
+           // (int)KodszotarEnums.TranzakcioJogcim.TerapiasJutalom ,
+            (int)KodszotarEnums.TranzakcioJogcim.FogvatartottnakMegiteltKarterites ,
+            (int)KodszotarEnums.TranzakcioJogcim.CelzottPenz ,
+             (int)KodszotarEnums.TranzakcioJogcim.IMKartalanitas
+            //(int)KodszotarEnums.TranzakcioJogcim.PenztariKerekites
+        };
+
+    }
+}

@@ -1,0 +1,24 @@
+import './bootstrapVue';
+import './remark';
+import './composition-api';
+import './datatables';
+import './vuebar';
+import './select2';
+import './summernote';
+import './vuelidate';
+//import './vueTables';
+import './intro';
+import './datepicker';
+import './jquery.slimscroll';
+import './vueDropzone';
+
+import '../fonts/font-awesome/font-awesome.css';
+import '../fonts/web-icons/web-icons.css';
+import '../fonts/brand-icons/brand-icons.css';
+import '../css/konasoft.css';
+import '../css/remark/introjs_remark.css';
+import '../css/remark/project.css';
+import './vueTreeSelect';
+import './vueCurrencyInput';
+import './ckeditor';
+import './textareaautoresize';

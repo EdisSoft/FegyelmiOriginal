@@ -1,0 +1,387 @@
+﻿<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body style="BACKGROUND: #f3f3f3" bgcolor="#f3f3f3">
+    <center>
+        <!-- Email Canvas -->
+        <table style="WIDTH: 660px" cellpadding="10" width="660" bgcolor="white">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <!-- Header -->
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        <font color="#336699" size="5" face="trebuchet ms">Tisztelt @Model.CimzettNev!
+                                        </font>
+                                    </td>
+                                </tr>
+                                @if(Model.FelfuggesztettFegyelmiList.Count>0 &&
+                                Model.AktivraAllitottFegyelmiList.Count>0)
+                                {
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        <font size="3" face="calibri">
+                                            2019.09.01-vel a JFK Fegyelmi rendszer átszállítás miatt automatikusan
+                                            felfüggesztette vagy visszaérkezés
+                                            esetén a felfüggesztést megszüntette az alábbi fegyelmi ügyeknél.
+                                        </font>
+                                    </td>
+                                </tr>
+                                }
+                                else if(Model.FelfuggesztettFegyelmiList.Count>0)
+                                {
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        @if(Model.FelfuggesztettFegyelmiList.Count==1)
+                                        {
+                                        <font size="3" face="calibri">
+                                            2019.09.01-vel a JFK Fegyelmi rendszer átszállítás miatt automatikusan
+                                            felfüggesztette az alábbi fegyelmi ügyet.
+                                        </font>
+                                        }
+                                        else
+                                        {
+                                        <font size="3" face="calibri">
+                                            2019.09.01-vel a JFK Fegyelmi rendszer átszállítás miatt automatikusan
+                                            felfüggesztette az alábbi fegyelmi ügyeket.
+                                        </font>
+                                        }
+                                    </td>
+                                </tr>
+                                }
+                                else if(Model.AktivraAllitottFegyelmiList.Count>0)
+                                {
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        @if(Model.AktivraAllitottFegyelmiList.Count==1)
+                                        {
+                                        <font size="3" face="calibri">
+                                            2019.09.01-vel a JFK Fegyelmi rendszer visszaérkezés esetén a felfüggesztést
+                                            megszüntette az alábbi fegyelmi ügynél.
+                                        </font>
+                                        }
+                                        else
+                                        {
+                                        <font size="3" face="calibri">
+                                            2019.09.01-vel a JFK Fegyelmi rendszer visszaérkezés esetén a felfüggesztést
+                                            megszüntette az alábbi fegyelmi ügyeknél.
+                                        </font>
+                                        }
+                                    </td>
+                                </tr>
+                                }
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        <font color="#336699" size="4" face="trebuchet ms">Felfüggesztett fegyelmi ügyek
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#E4EAEC"
+                                            width="100%">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="HEIGHT: 50px" height="50" align="center">
+                                                                    <font color="#333333" size="4" face="trebuchet ms">
+                                                                        @eljarasAlaVont</font>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="5" width="100%">
+                                                                        <tr>
+                                                                            <td>Fenyítés típusa:</td>
+                                                                            <td>@fenyites</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Ügy száma:</td>
+                                                                            <td>@fegyelmiUgySzam</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Fegyelmi vétség:</td>
+                                                                            <td>@fegyelmiVetseg</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Esemény ideje:</td>
+                                                                            <td>@esemelyIdeje</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table border="1" bordercolor="#8349f5" cellspacing="0"
+                                                                    cellpadding="8">
+                                                                    <tr>
+                                                                        <td align="center">
+                                                                            <a href="#" target="_blank"
+                                                                                style="font-size: 16px; font-weight: normal; color: #336699; text-decoration: none; display: inline-block;">
+                                                                                <font color="#8349f5"
+                                                                                    face="trebuchet ms">Fegyelmi ügy
+                                                                                    &rarr;</font>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#E4EAEC"
+                                            width="100%">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td style="HEIGHT: 50px" height="50" align="center">
+                                                                <font color="#333333" size="4" face="trebuchet ms">
+                                                                    @eljarasAlaVont</font>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <table cellpadding="5" width="100%">
+                                                                    <tr>
+                                                                        <td>Ügy száma:</td>
+                                                                        <td>@fegyelmiUgySzam</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Esemény ideje:</td>
+                                                                        <td>@esemelyIdeje</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Kivizsgáló:</td>
+                                                                        <td>@kivizsgalo</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Elrendelő:</td>
+                                                                        <td>@elrendelo</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table border="1" bordercolor="#8349f5" cellspacing="0"
+                                                                    cellpadding="8">
+                                                                    <tr>
+                                                                        <td align="center">
+                                                                            <a href="#" target="_blank"
+                                                                                style="font-size: 16px; font-weight: normal; color: #336699; text-decoration: none; display: inline-block;">
+                                                                                <font color="#8349f5"
+                                                                                    face="trebuchet ms">Fegyelmi ügy
+                                                                                    &rarr;</font>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="HEIGHT: 60px" height="60" valign="middle" colspan="4" align="left">
+                                        <font color="#336699" size="4" face="trebuchet ms">Kivizsgálás folyamatban
+                                            státuszba került fegyelmi ügyek</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#E4EAEC"
+                                            width="100%">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="HEIGHT: 50px" height="50" align="center">
+                                                                    <font color="#333333" size="4" face="trebuchet ms">
+                                                                        @eljarasAlaVont</font>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="5" width="100%">
+                                                                        <tr>
+                                                                            <td>Fenyítés típusa:</td>
+                                                                            <td>@fenyites</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Ügy száma:</td>
+                                                                            <td>@fegyelmiUgySzam</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Fegyelmi vétség:</td>
+                                                                            <td>@fegyelmiVetseg</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Esemény ideje:</td>
+                                                                            <td>@esemelyIdeje</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table border="1" bordercolor="#8349f5" cellspacing="0"
+                                                                    cellpadding="8">
+                                                                    <tr>
+                                                                        <td align="center">
+                                                                            <a href="#" target="_blank"
+                                                                                style="font-size: 16px; font-weight: normal; color: #336699; text-decoration: none; display: inline-block;">
+                                                                                <font color="#8349f5"
+                                                                                    face="trebuchet ms">Fegyelmi ügy
+                                                                                    &rarr;</font>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border="1" cellpadding="0" cellspacing="0" bordercolor="#E4EAEC"
+                                            width="100%">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td style="HEIGHT: 50px" height="50" align="center">
+                                                                <font color="#333333" size="4" face="trebuchet ms">
+                                                                    @eljarasAlaVont</font>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <table width="100%" cellpadding="5">
+                                                                    <tr>
+                                                                        <td>Ügy száma:</td>
+                                                                        <td>@fegyelmiUgySzam</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Esemény ideje:</td>
+                                                                        <td>@esemelyIdeje</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Kivizsgáló:</td>
+                                                                        <td>@kivizsgalo</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Elrendelő:</td>
+                                                                        <td>@elrendelo</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table border="1" bordercolor="#8349f5" cellspacing="0"
+                                                                    cellpadding="8">
+                                                                    <tr>
+                                                                        <td align="center">
+                                                                            <a href="#" target="_blank"
+                                                                                style="font-size: 16px; font-weight: normal; color: #336699; text-decoration: none; display: inline-block;">
+                                                                                <font color="#8349f5"
+                                                                                    face="trebuchet ms">Fegyelmi ügy
+                                                                                    &rarr;</font>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table cellpadding="5" bgcolor="#f2f2f2">
+            <tbody>
+                <tr>
+                    <td style="WIDTH: 10px" valign="top" width="10" align="right">
+                        &nbsp;<br />
+                        <font color="#222222" size="5" face="trebuchet ms"></font>
+                    </td>
+                    <td style="WIDTH: 590px" valign="top" width="590" align="center">
+                        <a style="TEXT-DECORATION: none" href="@BSRLink">
+                            <font color="#8349f5" size="2" face="trebuchet ms">A JFK Fegyelmi rendszer megnyitásához ezt
+                                a linket használja.</font>
+                        </a><br />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table style="WIDTH: 610px" width="610">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <p>
+                            <font color="#666666" size="1" face="trebuchet ms">
+                                Ezt a levelet a <a href="@fegyelmiLink">
+                                    <font color="#336699" face="trebuchet ms">Fegyelmi modultól</font>
+                                </a> kapta, mert
+                                önt véleményezésre felkérték egy a megjelölt eljárásban.<br />Konasoft&copy; 2019
+                            </font>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+
+</body>
+
+</html>

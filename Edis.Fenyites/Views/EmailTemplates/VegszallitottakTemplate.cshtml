@@ -1,0 +1,152 @@
+﻿@model Edis.ViewModels.JFK.FENY.Email.VegszallitottFogvatartottEmailData
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body style="BACKGROUND: #f3f3f3" bgcolor="#f3f3f3">
+    <center>
+        <!-- Email Canvas -->
+        <table style="WIDTH: 660px" cellpadding="10" width="660" bgcolor="white">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <!-- Header -->
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        <font color="#336699" size="5" face="trebuchet ms">Tisztelt @Model.CimzettekTitle!</font>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td style="HEIGHT: 50px" height="50" valign="middle" colspan="4" align="left">
+                                        <font size="3" face="calibri">
+                                            Végszállításra jegyeztek elő olyan fogvatartottakat, akiknek <strong>letöltetlen magánelzárás</strong> fenyítése van.
+                                            Az Országos Parancsnokság állásfoglalása alapján ezeket a fenyítéseket a szállítás előtt le kell töltetni.
+                                        </font>
+                                    </td>
+                                </tr>
+                                @for (int i = 0; i < Model.FegyelmiList.Count; i++)
+                                {
+                                    var ugy = Model.FegyelmiList[i];
+                                    <tr>
+                                        <td>
+                                            <table border="1"
+                                                   cellpadding="0"
+                                                   cellspacing="0"
+                                                   bordercolor="#E4EAEC"
+                                                   width="100%"
+                                                   style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="HEIGHT: 50px" height="50" align="center">
+                                                                        <font color="#333333" size="4" face="trebuchet ms">
+                                                                            @ugy.FogvatartottNyilvantartasiSzam @ugy.FogvatartottNev
+                                                                        </font>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <table cellpadding="5" width="100%">
+                                                                            <tr>
+                                                                                <td>Ügy száma:</td>
+                                                                                <td>@ugy.Ugyszam</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Szállítás dátuma:</td>
+                                                                                <td>@ugy.SzallitasIdeje.Value.ToString("yyyy.MM.dd. HH:mm")</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Fegyelmi vétség:</td>
+                                                                                <td>@ugy.FegyelmiVetseg</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Esemény ideje:</td>
+                                                                                <td>@ugy.EsemenyDatuma.ToString("yyyy.MM.dd. HH:mm")</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Esemény leírása:</td>
+                                                                                <td>@ugy.EsemenyLeirasa</td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="10">
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <table border="1" bordercolor="#8349f5" cellspacing="0" cellpadding="8">
+                                                                        <tr>
+                                                                            <td align="center">
+                                                                                <a href="@(Model.AlkalmazasUrl)/#/FegyelmiUgyek?fegyelmiugyid=@ugy.FegyelmiUgyId"
+                                                                                   target="_blank"
+                                                                                   style="font-size: 16px; font-weight: normal; color: #336699; text-decoration: none; display: inline-block;">
+                                                                                    <font color="#8349f5" face="trebuchet ms">Fegyelmi ügy &rarr;</font>
+                                                                                </a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table cellpadding="5" bgcolor="#f2f2f2">
+            <tbody>
+                <tr>
+                    <td style="WIDTH: 10px" valign="top" width="10" align="right">
+                        &nbsp;<br /><font color="#222222" size="5" face="trebuchet ms"></font>
+                    </td>
+                    <td style="WIDTH: 590px" valign="top" width="590" align="center">
+                        <a style="TEXT-DECORATION: none" href="@(Model.AlkalmazasUrl)/#/FegyelmiUgyek">
+                            <font color="#8349f5" size="2" face="trebuchet ms">A JFK Fegyelmi rendszer megnyitásához ezt a linket használja.</font>
+                        </a>
+                        <br />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table style="WIDTH: 610px" width="610">
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <p>
+                            <font color="#666666" size="1" face="trebuchet ms">
+                                Ezt a levelet a
+                                <a href="@(Model.AlkalmazasUrl)/#/FegyelmiUgyek">
+                                    <font color="#336699" face="trebuchet ms">Fegyelmi modultól</font>
+                                </a> kapta, mert Ön a fegyelmi ügyek határozathozója.
+                                <br />Konasoft&copy; 2020
+                            </font>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>
+

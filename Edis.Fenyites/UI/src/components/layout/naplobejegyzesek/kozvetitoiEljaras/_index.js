@@ -1,0 +1,24 @@
+import Vue from 'vue';
+import { registerComponent } from '../../../../utils/vueUtils';
+
+import KozvetitoiEljarasKezdemenyezeseNaplobejegyzes from './KozvetitoiEljarasKezdemenyezeseNaplobejegyzes.vue';
+import KozvetitoiEljarasMegtagadasNaplobejegyzes from './KozvetitoiEljarasMegtagadasNaplobejegyzes.vue';
+import KozvetitoiEljarasElrendelesNaplobejegyzes from './KozvetitoiEljarasElrendelesNaplobejegyzes.vue';
+import KozvetitoiEljarasFeljegyzesNaplobejegyzes from './KozvetitoiEljarasFeljegyzesNaplobejegyzes.vue';
+import KozvetitoiEljarasMegallapodasNaplobejegyzes from './KozvetitoiEljarasMegallapodasNaplobejegyzes.vue';
+import KozvetitoiEljarasLezarasaNaplobejegyzes from './KozvetitoiEljarasLezarasaNaplobejegyzes.vue';
+import KozvetitoiEljarasIndoklassalMegszuntetesNaplobejegyzes from './KozvetitoiEljarasIndoklassalMegszuntetesNaplobejegyzes.vue';
+import KozvetitoiEljarasHataridoModositasNaplobejegyzes from './KozvetitoiEljarasHataridoModositasNaplobejegyzes.vue';
+import KozvetitoiEljarasHataridoModositasKereseNaplobejegyzes from './KozvetitoiEljarasHataridoModositasKereseNaplobejegyzes.vue';
+import KozvetitoiEljarasMegallapodasTeljesultNaplobejegyzes from './KozvetitoiEljarasMegallapodasTeljesultNaplobejegyzes.vue';
+
+registerComponent(KozvetitoiEljarasKezdemenyezeseNaplobejegyzes);
+registerComponent(KozvetitoiEljarasMegtagadasNaplobejegyzes);
+registerComponent(KozvetitoiEljarasElrendelesNaplobejegyzes);
+registerComponent(KozvetitoiEljarasFeljegyzesNaplobejegyzes);
+registerComponent(KozvetitoiEljarasMegallapodasNaplobejegyzes);
+registerComponent(KozvetitoiEljarasLezarasaNaplobejegyzes);
+registerComponent(KozvetitoiEljarasIndoklassalMegszuntetesNaplobejegyzes);
+registerComponent(KozvetitoiEljarasHataridoModositasNaplobejegyzes);
+registerComponent(KozvetitoiEljarasHataridoModositasKereseNaplobejegyzes);
+registerComponent(KozvetitoiEljarasMegallapodasTeljesultNaplobejegyzes);

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{262820AA-A253-42AD-8A6B-6E3FF7411A60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edis.Functions</RootNamespace>
+    <AssemblyName>Edis.Functions</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=2.4.0.0, Culture=neutral, PublicKeyToken=146423a1b8d60775, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.2.4.0\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.6.0\lib\net45\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.6.0\lib\net45\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.6.0\lib\net45\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.1.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\valueinjecter.3.1.1\lib\net40\Omu.ValueInjecter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.6.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ModulNameAttribute.cs" />
+    <Compile Include="Attributes\AktivitasLogFilterAttribute.cs" />
+    <Compile Include="Base\EntityContext.cs" />
+    <Compile Include="Base\ExpressionHelper.cs" />
+    <Compile Include="Base\KonasoftBVFonixFunctionsBase.cs" />
+    <Compile Include="Base\FunctionsBase.cs" />
+    <Compile Include="Base\IDbSetBase.cs" />
+    <Compile Include="Base\IFonixVirFunctionsBase.cs" />
+    <Compile Include="Base\IKonasoftBVFonixFunctionsBase.cs" />
+    <Compile Include="Base\IFunctionsBase.cs" />
+    <Compile Include="Base\ModelQueries.cs" />
+    <Compile Include="Base\ValidationException.cs" />
+    <Compile Include="Base\FileDownloadException.cs" />
+    <Compile Include="Base\WarningException.cs" />
+    <Compile Include="Common\AdKezeloFunctions.cs" />
+    <Compile Include="Common\AlkalmazasKontextusFunctions.cs" />
+    <Compile Include="Common\IManipulationActiveDirectoryFunctions.cs" />
+    <Compile Include="Common\ManipulationActiveDirectoryFunctions.cs" />
+    <Compile Include="Common\INyomtatvanySablonFunctionBase.cs" />
+    <Compile Include="Common\NyomtatvanySablonFunctionBase.cs" />
+    <Compile Include="Common\RsaHelper.cs" />
+    <Compile Include="JFK\EsemenyekFunctions.cs" />
+    <Compile Include="JFK\FENY\FegyelmiEmailFunctions.cs" />
+    <Compile Include="JFK\FENY\FegyelmiUgyFunctionsNyomtatvanyok.cs" />
+    <Compile Include="JFK\FENY\FelfuggesztesekFunctions.cs" />
+    <Compile Include="JFK\FENY\FeltoltesFunctions.cs" />
+    <Compile Include="JFK\FENY\FenyitesVegrehajtasFunctions.cs" />
+    <Compile Include="JFK\FENY\IFegyelmiEmailFunctions.cs" />
+    <Compile Include="JFK\FENY\IFelfuggesztesekFunctions.cs" />
+    <Compile Include="JFK\FENY\IFeltoltesFunctions.cs" />
+    <Compile Include="JFK\FENY\IFenyitesVegrehajtasFunctions.cs" />
+    <Compile Include="JFK\FENY\IMaganelzarasFofelugyelokFunctions.cs" />
+    <Compile Include="JFK\FENY\IVegrehajtoSzakteruletekFunctions.cs" />
+    <Compile Include="JFK\FENY\ISzakteruletiVelemenyKeresekFunctions.cs" />
+    <Compile Include="JFK\FENY\MaganelzarasFofelugyelokFunctions.cs" />
+    <Compile Include="JFK\FENY\NaploFunctions.cs" />
+    <Compile Include="JFK\FENY\FegyelmiUgyFunctions.cs" />
+    <Compile Include="JFK\FENY\EsemenyResztvevoFunctions.cs" />
+    <Compile Include="JFK\FENY\INaploFunctions.cs" />
+    <Compile Include="JFK\FENY\IFegyelmiUgyFunctions.cs" />
+    <Compile Include="JFK\FENY\IEsemenyResztvevoFunctions.cs" />
+    <Compile Include="JFK\FENY\VegrehajtoSzakteruletekFunctions.cs" />
+    <Compile Include="JFK\FENY\SzakteruletiVelemenyKeresekFunctions.cs" />
+    <Compile Include="JFK\IEsemenyekFunctions.cs" />
+    <Compile Include="JFK\FogvatartottKepFunctions.cs" />
+    <Compile Include="JFK\IIktatottDokumentumokFunctions.cs" />
+    <Compile Include="JFK\IIktatottNyomtatvanyokFunctions.cs" />
+    <Compile Include="JFK\IktatottDokumentumokFunctions.cs" />
+    <Compile Include="JFK\IktatottNyomtatvanyokFunctions.cs" />
+    <Compile Include="JFK\FanyFegyelmiUgyFunctions.cs" />
+    <Compile Include="JFK\FenyitesDashboardFunctions.cs" />
+    <Compile Include="JFK\IFanyFegyelmiUgyFunctions.cs" />
+    <Compile Include="JFK\IFenyitesDashboardFunctions.cs" />
+    <Compile Include="Common\IAlkalmazasKontextusFunctions.cs" />
+    <Compile Include="Common\INyomtatvanySablonFunction.cs" />
+    <Compile Include="Common\NyomtatvanySablonFunction.cs" />
+    <Compile Include="Fany\KodszotarFunctions.cs" />
+    <Compile Include="Fany\IKodszotarFunctions.cs" />
+    <Compile Include="Common\CimkeFunctions.cs" />
+    <Compile Include="Common\ICimkeFunctions.cs" />
+    <Compile Include="Common\IFogvatartottNezetFunctions.cs" />
+    <Compile Include="Common\FogvatartottNezetFunctions.cs" />
+    <Compile Include="Fany\ActiveDirectoryKezeloFunctions.cs" />
+    <Compile Include="Fany\ActiveDirectoryFunctions.cs" />
+    <Compile Include="Fany\IIntezetFunctions.cs" />
+    <Compile Include="Fany\ISzemelyzetFunctions.cs" />
+    <Compile Include="Fany\IntezetFunctions.cs" />
+    <Compile Include="Fany\SzemelyzetFunctions.cs" />
+    <Compile Include="Fany\IActiveDirectoryKezeloFunctions.cs" />
+    <Compile Include="Fany\IActiveDirectoryFunctions.cs" />
+    <Compile Include="Fany\JogosultsagCacheFunctions.cs" />
+    <Compile Include="Fany\IJogosultsagCacheFunctions.cs" />
+    <Compile Include="Fany\JogosultsagKezeloFunctions.cs" />
+    <Compile Include="Fany\FogvatartottFunctions.cs" />
+    <Compile Include="Fany\IJogosultsagKezeloFunctions.cs" />
+    <Compile Include="Fany\IFogvatartottFunctions.cs" />
+    <Compile Include="Fany\ServiceLocator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edis.Diagnostics\Edis.Diagnostics.csproj">
+      <Project>{bfe3a8b6-09a3-49c0-a11e-2ad2bc436ed9}</Project>
+      <Name>Edis.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edis.Entities\Edis.Entities.csproj">
+      <Project>{6c5831ae-53f1-4eb8-bba2-accb75c3b0f3}</Project>
+      <Name>Edis.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edis.IoC\Edis.IoC.csproj">
+      <Project>{9eedb0d1-51a0-4951-b605-a59ae77a1643}</Project>
+      <Name>Edis.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edis.Repositories\Edis.Repositories.csproj">
+      <Project>{9aa6fd15-5916-4f4d-b919-afe5a6f82033}</Project>
+      <Name>Edis.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edis.Utilities\Edis.Utilities.csproj">
+      <Project>{9a9152d8-63e3-4332-9d82-c5f565221712}</Project>
+      <Name>Edis.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Edis.ViewModels\Edis.ViewModels.csproj">
+      <Project>{e21bdd07-758f-4604-ab81-2fec51144299}</Project>
+      <Name>Edis.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C5831AE-53F1-4EB8-BBA2-ACCB75C3B0F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Edis.Entities</RootNamespace>
+    <AssemblyName>Edis.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.1.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\valueinjecter.3.1.1\lib\net40\Omu.ValueInjecter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=2.8.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.2.8.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\EnumOrderAttribute.cs" />
+    <Compile Include="Attributes\KodszotarCsoportAzonositoAttribute.cs" />
+    <Compile Include="Attributes\GroupNameAttribute.cs" />
+    <Compile Include="Attributes\ToTitleCaseConversion.cs" />
+    <Compile Include="Attributes\TitleAttribute.cs" />
+    <Compile Include="Attributes\SkipFirstUpperCaseConversion.cs" />
+    <Compile Include="Enums\KimutatasEmailComponentTags.cs" />
+    <Compile Include="Enums\KimutatasEmailTemplates.cs" />
+    <Compile Include="Enums\KimutatasEmailComponents.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3Munkatapasztalat.cs" />
+    <Compile Include="Enums\ModulCimke.cs" />
+    <Compile Include="Enums\AktivitasTipusok.cs" />
+    <Compile Include="Enums\Cimke\BuntetesTipusa.cs" />
+    <Compile Include="Enums\Cimke\EmailTipusa.cs" />
+    <Compile Include="Enums\Cimke\F3VegrehajtasTipus.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\HatalyonKivulHelyezesTipusa.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3BfbEleAllitasOka.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3Beosztas.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3FanyInterfaceTipus.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3EloallitasStatusza.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3Szakterulet.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3SzakteruletTipusa.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\JutalmiNaploTipus.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\JutalmiUgyStatusz.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\JutalomUgyekTipusai.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3TuzEsMunkavedelemTipusok.cs" />
+    <Compile Include="Enums\Cimke\JegyzekStatuszok.cs" />
+    <Compile Include="Enums\Cimke\JegyzekTipusok.cs" />
+    <Compile Include="Enums\Cimke\Jutalmazas\FenyitesStatuszFany.cs" />
+    <Compile Include="Enums\Cimke\Jutalmazas\JutalomTipusok.cs" />
+    <Compile Include="Enums\Cimke\Neme.cs" />
+    <Compile Include="Enums\Cimke\OET\CikkSzallitasTipus.cs" />
+    <Compile Include="Enums\Cimke\VegrehajtasiFokozatok.cs" />
+    <Compile Include="Enums\EsemenyJelento\ErintettSzemelyiAllomanyTipusa.cs" />
+    <Compile Include="Enums\EsemenyJelento\ErintettFogvatartottTipusa.cs" />
+    <Compile Include="Enums\IkonBetuTipus.cs" />
+    <Compile Include="Enums\JutalomUgyekValtozasTipusai.cs" />
+    <Compile Include="Enums\DatumIntervallumok.cs" />
+    <Compile Include="Enums\Kodszotar\FegyelmiStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasBvOkbolTavolIndoklasok.cs" />
+    <Compile Include="Enums\TarthelyTipusa.cs" />
+    <Compile Include="Enums\BITNaploSzekciok.cs" />
+    <Compile Include="Enums\CelHelyTipus.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3KockazatelemzesiBesorolasiSzint.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3ErtekelesTipus.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3Ertekeles.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3NaplobejegyzesTipusa.cs" />
+    <Compile Include="Enums\Cimke\Fonix3\F3Felhok.cs" />
+    <Compile Include="Enums\FogvatartottSzuro.cs" />
+    <Compile Include="Enums\KapcsolodoNaploTipus.cs" />
+    <Compile Include="Enums\Cimke\Aktivitas\Modul.cs" />
+    <Compile Include="Enums\Cimke\Aktivitas\TevekenysegTipus.cs" />
+    <Compile Include="Enums\KFFELetszamvaltozasTipus.cs" />
+    <Compile Include="Enums\KFFENaploSzekcio.cs" />
+    <Compile Include="Enums\MSzNaploSzekciok.cs" />
+    <Compile Include="Enums\Muszak.cs" />
+    <Compile Include="Enums\Objektum.cs" />
+    <Compile Include="Enums\SzallitasOkaTipus.cs" />
+    <Compile Include="Common\ManipulationActiveDirectory.cs" />
+    <Compile Include="Enums\Kodszotar\RinNaplobejegyzesKategoriaTipus.cs" />
+    <Compile Include="Enums\Kodszotar\RIN\IskolaiVegzettseg.cs" />
+    <Compile Include="Enums\Kodszotar\RIN\KilepesEgyebOka.cs" />
+    <Compile Include="Enums\Kodszotar\RIN\KilepesOka.cs" />
+    <Compile Include="Enums\MegjegyzesTipusa.cs" />
+    <Compile Include="Enums\RinSzolgaltatas.cs" />
+    <Compile Include="JFK\FENY\EmailErtesites.cs" />
+    <Compile Include="JFK\FENY\MaganelzarasFofelugyelok.cs" />
+    <Compile Include="JFK\RsaLoginData.cs" />
+    <Compile Include="Enums\Cimke\ElojegyzesTipus.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\FelfuggesztesOka.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\FegyelmiVetsegTipusok.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\HatarozatHozoJogkore.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\IktatottDokumentumTipusok.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\FenyitesTipusok.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\FegyelmiNaploTipus.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\ErintettsegFoka.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\FegyelmiUgyStatusz.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\VisszakuldesOka.cs" />
+    <Compile Include="Enums\FegyelmiKozvetitoEljarasEredmenyei.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\MennyisegiEgysegek.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\MegszuntetesOkai.cs" />
+    <Compile Include="Enums\Cimke\Fegyelmi\FenyitesTartama.cs" />
+    <Compile Include="Enums\Fenyites\ModalTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\ElkulonitesTipusa.cs" />
+    <Compile Include="Enums\Fenyites\ReintegraciosTisztDontesTipus.cs" />
+    <Compile Include="Enums\Kodszotar\FenyitesTipusa.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\KeszletBevetelezesStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BefogadasModja.cs" />
+    <Compile Include="Enums\Kodszotar\KorlatozasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\SzabadulasModja.cs" />
+    <Compile Include="Enums\Kodszotar\TavolletOka.cs" />
+    <Compile Include="Enums\Kodszotar\VegrehajtasiStatusz.cs" />
+    <Compile Include="Enums\MobilKeszletNyilvSzinkronTipus.cs" />
+    <Compile Include="JFK\FENY\Felfuggesztesek.cs" />
+    <Compile Include="JFK\FENY\Feltoltesek.cs" />
+    <Compile Include="JFK\FENY\FenyitesVegrehajtasok.cs" />
+    <Compile Include="JFK\FENY\IktatottDokumentumok.cs" />
+    <Compile Include="JFK\FENY\Naplo.cs" />
+    <Compile Include="JFK\FENY\FegyelmiUgy.cs" />
+    <Compile Include="JFK\FENY\EsemenyResztvevo.cs" />
+    <Compile Include="JFK\FENY\Esemenyek.cs" />
+    <Compile Include="JFK\FENY\FogvatartottListaItemFegyelmiView.cs" />
+    <Compile Include="JFK\FENY\VegrehajtoSzakteruletek.cs" />
+    <Compile Include="JFK\FENY\SzakteruletiVelemenyKeresek.cs" />
+    <Compile Include="JFK\Szallitas.cs" />
+    <Compile Include="Base\KeziJavitoEntity.cs" />
+    <Compile Include="Base\FanyBaseEntity.cs" />
+    <Compile Include="Base\NotFilteredBaseEntity.cs" />
+    <Compile Include="Base\KonaExtendedEntity.cs" />
+    <Compile Include="Base\EntityOperationAttribute.cs" />
+    <Compile Include="Base\ExtendedBaseEntity.cs" />
+    <Compile Include="Base\BaseEntity.cs" />
+    <Compile Include="Base\IAzonositovalRendelkezo.cs" />
+    <Compile Include="Base\SoftDeleteEntity.cs" />
+    <Compile Include="Common\AdUserEmail.cs" />
+    <Compile Include="Common\AdUser.cs" />
+    <Compile Include="Common\FunkcioEngedelyezes.cs" />
+    <Compile Include="Common\Felho.cs" />
+    <Compile Include="Enums\Cimke\Felhok.cs" />
+    <Compile Include="Enums\FenyitesFegyelmiUgyekTipusai.cs" />
+    <Compile Include="Enums\FenyitesNyomtatvanyok.cs" />
+    <Compile Include="Enums\BvShopCikktorzsAfa.cs" />
+    <Compile Include="Enums\FunkcioEngedelyezesAzonosito.cs" />
+    <Compile Include="Enums\Kodszotar\EloallitasOka.cs" />
+    <Compile Include="Enums\Cimke\Jutalmazas\JutalmazasJogkorok.cs" />
+    <Compile Include="Enums\AdatbazisTipus.cs" />
+    <Compile Include="Enums\Kodszotar\RIN\KodszotarCsoport.cs" />
+    <Compile Include="Enums\ListaelemTipus.cs" />
+    <Compile Include="Enums\KNyTermekTipus.cs" />
+    <Compile Include="Enums\FoglMunkaraAlkalmassagSzoveg.cs" />
+    <Compile Include="Enums\Kodszotar\BehelyezesOka.cs" />
+    <Compile Include="Enums\Kodszotar\BvShop\KietkezoBoltWebShopEgyseg.cs" />
+    <Compile Include="Enums\Kodszotar\BvShop\KietkezoBoltMennyisegiEgyseg.cs" />
+    <Compile Include="Enums\Kodszotar\BvShop\KietkezoVasarlasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvShop\KietkezoBoltTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvShop\KietkezoVasarlasStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\EgeszsegugyiAllapot.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasOktatasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\KeszletLevonasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\KeszletMozgasIrany.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\KeszletStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\RaktarkoziMozgasStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\KeszletMozgasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\Keszletnyilvantarto\KeszletPartnerTipus.cs" />
+    <Compile Include="Enums\Kodszotar\MunkaraAlkalmas.cs" />
+    <Compile Include="Enums\Kodszotar\BiztonsagiKockazat.cs" />
+    <Compile Include="Enums\Kodszotar\NyilvantartasiStatusz.cs" />
+    <Compile Include="Enums\Cimke\OET\ErtekCikkTipus.cs" />
+    <Compile Include="Enums\Cimke\OET\OetTalaltCikkStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\ElojegyzesOkok.cs" />
+    <Compile Include="Enums\BvShopMuveletVonalkodok.cs" />
+    <Compile Include="Enums\BvShopVasarlasString.cs" />
+    <Compile Include="Enums\Kodszotar\RIN\NaploTipus.cs" />
+    <Compile Include="Enums\Kodszotar\RIN\UgyfelTipus.cs" />
+    <Compile Include="Enums\Kodszotar\Ruhazat\RuhazatiTetelMozgasTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\Ruhazat\RuhazatRaktariTetelTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\TobbletInfo.cs" />
+    <Compile Include="Enums\RinStatusz.cs" />
+    <Compile Include="Enums\RinSzolgaltatasEsemeny.cs" />
+    <Compile Include="Enums\RinWizard.cs" />
+    <Compile Include="Enums\RinUgyfelTipus.cs" />
+    <Compile Include="Enums\KnyMobilKeszulekNev.cs" />
+    <Compile Include="Fany\FanyFegyelmiUgy.cs" />
+    <Compile Include="Fany\FogvatartottElelmezesiNorma.cs" />
+    <Compile Include="Enums\Kodszotar\KerelemPanaszTipus.cs" />
+    <Compile Include="JFK\FENY\IktatottNyomtatvanyok.cs" />
+    <Compile Include="Common\LoginBeallitasok.cs" />
+    <Compile Include="Enums\BFBEntitasTipus.cs" />
+    <Compile Include="Enums\EnumExtensions.cs" />
+    <Compile Include="Enums\EntityFilters.cs" />
+    <Compile Include="Enums\BvIntezet.cs" />
+    <Compile Include="Enums\BfbDontesSzoveg.cs" />
+    <Compile Include="Enums\FalezStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\KarteritesTorlesztoReszletStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BfbDontesTipus.cs" />
+    <Compile Include="Enums\Kodszotar\PkttrKartalanitasStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\PkttrKartalanitasLezarasTipus.cs" />
+    <Compile Include="Enums\Cimke\OET\OetCikkStatusz.cs" />
+    <Compile Include="Enums\Cimke\OET\OetRaktariHelyTipusok.cs" />
+    <Compile Include="Enums\Cimke\OET\OetRaktarTipusok.cs" />
+    <Compile Include="Enums\Cimke\OET\OetBevetelKiadasJogcim.cs" />
+    <Compile Include="Enums\Cimke\OET\SzelvenyStatuszok.cs" />
+    <Compile Include="Enums\Kodszotar\TelefonTipus.cs" />
+    <Compile Include="Enums\Kodszotar\VegrehajtasiFokok.cs" />
+    <Compile Include="Enums\PkttrFogvatartottiVelemenyTipus.cs" />
+    <Compile Include="Enums\Kodszotar\RezsimTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\AtfutoSzamlaTetelStatuszok.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\AtfutoSzamlaTetelekNaploTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatBankJovairasJogcim.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BelsoAtvezetesiTranzakcioJogcim.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\AtfutoSzamlaTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatTerhelesJogcimLista\BizonylatBankTerhelesJogcimLista.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatTerhelesJogcimLista\BizonylatKartyaTerhelesJogcimLista.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatTerhelesJogcimLista\BizonylatPenztarTerhelesJogcimLista.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatJovairasJogcimLista\BizonylatKartyaJovairasJogcimLista.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatJovairasJogcimLista\BizonylatPenztarJovairasJogcimLista.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatJovairasJogcimLista\BizonylatBankJovairasJogcimLista.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\CimreKuldesTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasBizonylatMunkaltatoTipus.cs" />
+    <Compile Include="Enums\Kodszotar\PkttrPanaszLezarasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\PkttrPanaszStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasBizonylatStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasBizonylatTetelEllenorzesStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasBizonylatTipus.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasMunkaidoCsokkenes.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasNapiJelenlet.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasKimaradasOka.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasNemDolgozasOka.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasMunkaidoAlapja.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\GiroTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\KarteritesSzunteltetesTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\LockTipus.cs" />
+    <Compile Include="Enums\Kodszotar\SzabadulasraTartalekoltOsszegMozgasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\TartasdijTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\ZarolasStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\UzenetTipus.cs" />
+    <Compile Include="Enums\Kodszotar\OrszagosEgyediTelefonalasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\KapcsolattartoTipus.cs" />
+    <Compile Include="Enums\Kodszotar\NemSzamitbeleAzIdokeretbe.cs" />
+    <Compile Include="Enums\Kodszotar\NemBehallgathatoKapcsolattartok.cs" />
+    <Compile Include="Enums\Kodszotar\MaganelzarasonHivhatoak.cs" />
+    <Compile Include="Enums\Kodszotar\KorlatozasTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\DokumentumSablonok.cs" />
+    <Compile Include="Enums\Kodszotar\SzolgaltatoTipusok.cs" />
+    <Compile Include="Enums\PkttrKartalanitasHataridok.cs" />
+    <Compile Include="Enums\PkttrKartalanitasListaTipus.cs" />
+    <Compile Include="Enums\PkttrPanaszListaTipus.cs" />
+    <Compile Include="Enums\PkttrPanaszCommand.cs" />
+    <Compile Include="Fany\FogvatartottiKartya.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BizonylatTipusok.cs" />
+    <Compile Include="Enums\Kodszotar\EtkezesTipus.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\CelzottPenzMogzasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\ZarolasNaploTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\ZarolasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\VedettPenzMogzasTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\MunkadijbolSzuksegletiCikkreFodithatoPenzMogzasTipus.cs" />
+    <Compile Include="Fany\ElozetesLetartoztatas.cs" />
+    <Compile Include="Fany\FogvatartottStatusz.cs" />
+    <Compile Include="Fany\SzemelyzetFany.cs" />
+    <Compile Include="Fany\vZarkaLetszam.cs" />
+    <Compile Include="Fany\ZarkaVegrFok.cs" />
+    <Compile Include="Fany\SzabadSzoveg.cs" />
+    <Compile Include="JFK\FENY\FenyitesDashboardListItem.cs" />
+    <Compile Include="JFK\Jutalmazas\FogvatartottListaItemJutalmazasView.cs" />
+    <Compile Include="JFK\Jutalmazas\JutalomTipus.cs" />
+    <Compile Include="Common\Cimke.cs" />
+    <Compile Include="Common\FogvatartottNezet.cs" />
+    <Compile Include="Common\SajatLink.cs" />
+    <Compile Include="Common\NyomtatvanySablon.cs" />
+    <Compile Include="Common\SzerepkorJogosultsag.cs" />
+    <Compile Include="Enums\FttrCsempek.cs" />
+    <Compile Include="Enums\KodszotarCsoportok.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BvTartozasStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\BvTartozasJogcim.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\UtalasiHelyTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\TranzakcioIrany.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\KarteritesTipus.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\TranzakcioStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\KarteritesStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\KifizetesTipusa.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\LetiltasStatusz.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\LetiltasTipusa.cs" />
+    <Compile Include="Enums\Kodszotar\FoglalkoztatasNapjelleg.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\PenzugyiCsoportok.cs" />
+    <Compile Include="Enums\Kodszotar\BvBank\TranzakcioJogcim.cs" />
+    <Compile Include="Enums\SzerepkorModositasTipus.cs" />
+    <Compile Include="Enums\WizardFolyamatok.cs" />
+    <Compile Include="Fany\AlkalmazasKontextus.cs" />
+    <Compile Include="Fany\FegyelmiFenyites.cs" />
+    <Compile Include="Fany\DebugGroupPrincipal.cs" />
+    <Compile Include="Fany\Fogvatartott.cs" />
+    <Compile Include="Fany\FogvatartottFenykep.cs" />
+    <Compile Include="Fany\FogvatartottSzemely.cs" />
+    <Compile Include="Fany\FogvatartottSzemelyesAdatai.cs" />
+    <Compile Include="Fany\FogvatartottSzukitett.cs" />
+    <Compile Include="Fany\GroupPrincipalSeged.cs" />
+    <Compile Include="Fany\Helyseg.cs" />
+    <Compile Include="Fany\Intezet.cs" />
+    <Compile Include="Fany\IntezetiObjektum.cs" />
+    <Compile Include="Fany\JogosultsagInformacio.cs" />
+    <Compile Include="Fany\JogosultsagInformaciosKulcs.cs" />
+    <Compile Include="Enums\Jogosultsagok.cs" />
+    <Compile Include="Fany\Kodszotar.cs" />
+    <Compile Include="Fany\KodSzotarCsoport.cs" />
+    <Compile Include="Fany\Korlet.cs" />
+    <Compile Include="Fany\MenuItemModel.cs" />
+    <Compile Include="Fany\NevelesiCsoport.cs" />
+    <Compile Include="Fany\Szemelyzet.cs" />
+    <Compile Include="Fany\SzemelyzetCsoport.cs" />
+    <Compile Include="Fany\SzemelyzetCsoportSzerepkor.cs" />
+    <Compile Include="Fany\SzemelyzetJogosultsag.cs" />
+    <Compile Include="Fany\SzemelyzetJogosultsagCsoportok.cs" />
+    <Compile Include="Fany\SzemelyzetJogosultsagok.cs" />
+    <Compile Include="Fany\SzemelyzetSzerepkor.cs" />
+    <Compile Include="Fany\SzemelyzetSzerepkorJogosultsag.cs" />
+    <Compile Include="Fany\Tranzakcio.cs" />
+    <Compile Include="Fany\Zarka.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edis.Utilities\Edis.Utilities.csproj">
+      <Project>{9A9152D8-63E3-4332-9D82-C5F565221712}</Project>
+      <Name>Edis.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\Kodszotar\Idorend\" />
+    <Folder Include="Enums\Kodszotar\Raktar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\Cimke\F3BFBElojegyzesTipusa.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
